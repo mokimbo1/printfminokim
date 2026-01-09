@@ -12,13 +12,13 @@
 
 #include "ft_printf.h"
 
-int ft_putud(unsigned int n)
+int	ft_putud(unsigned int n)
 {
-	int len; 
-	len = 0;
+	int	len;
 
-	if(n >= 10)
-		len += ft_putud(n/10);
-	len += ft_putchar((n % 10) +'0');
+	len = 0;
+	if (n >= 10)
+		len += ft_putud(n / 10);
+	len += ft_putchar((n % 10) + '0');
 	return (len);
 }

@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
+# include <stdarg.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
 
 int	ft_putdig(int n);
 int	ft_putchar(char c);
@@ -26,7 +26,7 @@ int	ft_putud(unsigned int n);
 int	ft_puthex(size_t n);
 int	ft_puthex_upper(unsigned int n);
 int	ft_putper(void);
-int ft_put_null_char(long c);
+int	ft_put_null_char(long c);
 int	ft_printf(const char *n, ...);
 
 #endif

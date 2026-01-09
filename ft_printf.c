@@ -12,66 +12,50 @@
 
 #include "ft_printf.h"
 
-int ft_typeinspector(const char *n, va_list args)
+int	ft_typeinspector(const char *n, va_list args)
 {
-	int len;
+	int	len;
 
 	len = 0;
-	if(*(n + 1) == 'd' || *(n + 1) == 'i')
+	if (*(n + 1) == 'd' || *(n + 1) == 'i')
 		len += ft_putdig(va_arg(args, int));
-	if(*(n + 1) == 'c')
+	if (*(n + 1) == 'c')
 		len += ft_putchar((char)va_arg(args, int));
-	if(*(n + 1) == 's')
+	if (*(n + 1) == 's')
 		len += ft_putstring(va_arg(args, char *));
-	if(*(n + 1) == 'p')
+	if (*(n + 1) == 'p')
 		len += ft_putpoint(va_arg(args, unsigned long));
-	if(*(n + 1) == 'u')
+	if (*(n + 1) == 'u')
 		len += ft_putud(va_arg(args, unsigned int));
-	if(*(n + 1) == 'x')
+	if (*(n + 1) == 'x')
 		len += ft_puthex(va_arg(args, unsigned int));
-	if(*(n + 1) == 'X')
+	if (*(n + 1) == 'X')
 		len += ft_puthex_upper(va_arg(args, unsigned int));
-	if(*(n + 1) == '%')
+	if (*(n + 1) == '%')
 		len += ft_putper();
 	return (len);
 }
 
 int	ft_printf(const char *n, ...)
 {
-	va_list args;
+	va_list	args;
 	long	counter;
 
 	va_start(args, n);
 	counter = 0;
-	while(*n)
+	while (*n)
 	{
-		if(*n == '%')
+		if (*n == '%')
 		{
 			counter += ft_typeinspector(n, args);
 			n++;
 			if (!*n)
-				return(1);
+				return (1);
 		}
 		else
 			counter += write(1, n, 1);
 		n++;
 	}
 	va_end(args);
-	return(counter);
+	return (counter);
 }
-
-
-
-
-
-
-
-
-
-
-
-	// int a = 5;
-	// int b = 10;
-	// int c = a+b;
-
-	// printf("%d + %d = %d\n,", a, b, c);

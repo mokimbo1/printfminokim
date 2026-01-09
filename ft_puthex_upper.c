@@ -14,15 +14,14 @@
 
 int	ft_puthex_upper(unsigned int n)
 {
-    int len = 0;
+	int	len;
 
-    if (n >= 16)
-        len += ft_puthex_upper(n / 16);
-
-    if ((n % 16) < 10)
-        len += ft_putchar((n % 16) + '0');
-    else
-        len += ft_putchar((n % 16) - 10 + 'A');
-
-    return (len);
+	len = 0;
+	if (n >= 16)
+		len += ft_puthex_upper(n / 16);
+	if ((n % 16) < 10)
+		len += ft_putchar((n % 16) + '0');
+	else
+		len += ft_putchar((n % 16) - 10 + 'A');
+	return (len);
 }

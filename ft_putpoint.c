@@ -14,7 +14,7 @@
 
 int	ft_putpoint(size_t ptr)
 {
-	int i;
+	int	i;
 
 	if (ptr == 0)
 		return (ft_put_null_char(0));

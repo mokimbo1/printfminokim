@@ -12,20 +12,16 @@
 
 #include "ft_printf.h"
 
-int ft_puthex(size_t n)
+int	ft_puthex(size_t n)
 {
-    int len;
+	int	len;
+
 	len = 0;
-
-    if (n >= 16)
-        len += ft_puthex(n / 16);
-
-    if ((n % 16) < 10)
-        len += ft_putchar((n % 16) + '0');
-    else
-        len += ft_putchar((n % 16) - 10 + 'a');
-
-    return (len);
+	if (n >= 16)
+		len += ft_puthex(n / 16);
+	if ((n % 16) < 10)
+		len += ft_putchar((n % 16) + '0');
+	else
+		len += ft_putchar((n % 16) - 10 + 'a');
+	return (len);
 }
-
-

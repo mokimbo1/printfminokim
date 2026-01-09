@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int ft_put_null_char(long c)
+int	ft_put_null_char(long c)
 {
 	if (c == 1)
 	{
@@ -24,5 +24,5 @@ int ft_put_null_char(long c)
 		write(1, "(nil)", 5);
 		return (5);
 	}
-	return 0;
+	return (0);
 }
