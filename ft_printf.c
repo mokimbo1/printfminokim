@@ -24,7 +24,7 @@ int	ft_typeinspector(const char *n, va_list args)
 	if (*(n + 1) == 's')
 		len += ft_putstring(va_arg(args, char *));
 	if (*(n + 1) == 'p')
-		len += ft_putpoint(va_arg(args, unsigned long));
+		len += ft_putpoint(va_arg(args, size_t));
 	if (*(n + 1) == 'u')
 		len += ft_putud(va_arg(args, unsigned int));
 	if (*(n + 1) == 'x')
@@ -43,6 +43,8 @@ int	ft_printf(const char *n, ...)
 
 	va_start(args, n);
 	counter = 0;
+	if (n == NULL)
+		return (-1);
 	while (*n)
 	{
 		if (*n == '%')
