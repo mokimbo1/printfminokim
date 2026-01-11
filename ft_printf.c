@@ -19,19 +19,19 @@ int	ft_typeinspector(const char *n, va_list args)
 	len = 0;
 	if (*(n + 1) == 'd' || *(n + 1) == 'i')
 		len += ft_putdig(va_arg(args, int));
-	if (*(n + 1) == 'c')
+	else if (*(n + 1) == 'c')
 		len += ft_putchar((char)va_arg(args, int));
-	if (*(n + 1) == 's')
+	else if (*(n + 1) == 's')
 		len += ft_putstring(va_arg(args, char *));
-	if (*(n + 1) == 'p')
+	else if (*(n + 1) == 'p')
 		len += ft_putpoint(va_arg(args, size_t));
-	if (*(n + 1) == 'u')
+	else if (*(n + 1) == 'u')
 		len += ft_putud(va_arg(args, unsigned int));
-	if (*(n + 1) == 'x')
+	else if (*(n + 1) == 'x')
 		len += ft_puthex(va_arg(args, unsigned int));
-	if (*(n + 1) == 'X')
+	else if (*(n + 1) == 'X')
 		len += ft_puthex_upper(va_arg(args, unsigned int));
-	if (*(n + 1) == '%')
+	else if (*(n + 1) == '%')
 		len += ft_putper();
 	return (len);
 }
