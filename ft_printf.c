@@ -33,6 +33,8 @@ int	ft_typeinspector(const char *n, va_list args)
 		len += ft_puthex_upper(va_arg(args, size_t));
 	else if (*(n + 1) == '%')
 		len += ft_putper();
+	else
+		len += ft_putunknown(*(n + 1));
 	return (len);
 }
 

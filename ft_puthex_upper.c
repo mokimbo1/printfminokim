@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_puthex_upper(unsigned int n)
+int	ft_puthex_upper(size_t n)
 {
 	int	len;
 

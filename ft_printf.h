@@ -21,10 +21,11 @@
 int	ft_putdig(int n);
 int	ft_putchar(char c);
 int	ft_putstring(char *s);
+int	ft_putunknown(char c);
 int	ft_putpoint(size_t ptr);
 int	ft_putud(unsigned int n);
 int	ft_puthex(size_t n);
-int	ft_puthex_upper(unsigned int n);
+int	ft_puthex_upper(size_t n);
 int	ft_putper(void);
 int	ft_put_null_char(long c);
 int	ft_printf(const char *n, ...);

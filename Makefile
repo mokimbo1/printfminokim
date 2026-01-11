@@ -24,6 +24,7 @@ ft_putper.c \
 ft_putpoint.c \
 ft_putstring.c \
 ft_putud.c \
+ft_putunknown.c \
 ft_printf.c
 
 

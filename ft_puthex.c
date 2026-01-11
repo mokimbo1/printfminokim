@@ -14,14 +14,18 @@
 
 int	ft_puthex(size_t n)
 {
+	int temp;
 	int	len;
 
 	len = 0;
 	if (n >= 16)
 		len += ft_puthex(n / 16);
 	if ((n % 16) < 10)
-		len += ft_putchar((n % 16) + '0');
+		temp = ft_putchar((n % 16) + '0');
 	else
-		len += ft_putchar((n % 16) - 10 + 'a');
+		temp = ft_putchar((n % 16) - 10 + 'a');
+	if (temp == -1)
+		return (-1);
+	len += temp;
 	return (len);
 }
