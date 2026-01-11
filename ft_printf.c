@@ -39,24 +39,24 @@ int	ft_typeinspector(const char *n, va_list args)
 int	ft_printf(const char *n, ...)
 {
 	va_list	args;
-	long	counter;
-
+	int		counter;
+	int		temp;
+	
 	va_start(args, n);
 	counter = 0;
 	if (n == NULL)
 		return (-1);
 	while (*n)
 	{
-		if (*n == '%')
-		{
-			counter += ft_typeinspector(n, args);
-			n++;
-			if (!*n)
-				return (1);
-		}
+		temp = 0;
+		if (*n == '%' && *(n+1) != '\0')
+			temp = ft_typeinspector(n++, args);
 		else
-			counter += write(1, n, 1);
+			temp = write(1, n, 1);
 		n++;
+		if (temp == -1)
+			return (-1);
+		counter += temp;
 	}
 	va_end(args);
 	return (counter);
