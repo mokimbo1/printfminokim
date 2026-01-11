@@ -14,12 +14,18 @@
 
 int	ft_putpoint(size_t ptr)
 {
+	int	temp;
 	int	i;
 
 	if (ptr == 0)
 		return (ft_put_null_char(0));
-	write(1, "0x", 2);
-	i = ft_puthex(ptr);
-	i += 2;
+	temp = write(1, "0x", 2);
+	if (temp == -1)
+		return (-1);
+	i = temp;
+	temp = ft_puthex(ptr);
+	if (temp == -1)
+		return (-1);
+	i += temp;
 	return (i);
 }

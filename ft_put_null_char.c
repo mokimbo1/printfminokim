@@ -16,13 +16,11 @@ int	ft_put_null_char(long c)
 {
 	if (c == 1)
 	{
-		write(1, "(null)", 6);
-		return (6);
+		return(write(1, "(null)", 6));
 	}
 	if (c == 0)
 	{
-		write(1, "(nil)", 5);
-		return (5);
+		return(write(1, "(nil)", 5));
 	}
 	return (0);
 }
