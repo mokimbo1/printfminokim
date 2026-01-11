@@ -28,9 +28,9 @@ int	ft_typeinspector(const char *n, va_list args)
 	else if (*(n + 1) == 'u')
 		len += ft_putud(va_arg(args, unsigned int));
 	else if (*(n + 1) == 'x')
-		len += ft_puthex(va_arg(args, unsigned int));
+		len += ft_puthex(va_arg(args, size_t));
 	else if (*(n + 1) == 'X')
-		len += ft_puthex_upper(va_arg(args, unsigned int));
+		len += ft_puthex_upper(va_arg(args, size_t));
 	else if (*(n + 1) == '%')
 		len += ft_putper();
 	return (len);
