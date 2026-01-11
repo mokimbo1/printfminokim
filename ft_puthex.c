@@ -14,7 +14,7 @@
 
 int	ft_puthex(size_t n)
 {
-	int temp;
+	int	temp;
 	int	len;
 
 	len = 0;
