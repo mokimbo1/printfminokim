@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_puthex(unsigned int n)
+int	ft_puthex(size_t n)
 {
 	int	temp;
 	int	len;
