@@ -28,9 +28,9 @@ int	ft_typeinspector(const char *n, va_list args)
 	else if (*(n + 1) == 'u')
 		len += ft_putud(va_arg(args, unsigned int));
 	else if (*(n + 1) == 'x')
-		len += ft_puthex(va_arg(args, size_t));
+		len += ft_puthex(va_arg(args, unsigned int));
 	else if (*(n + 1) == 'X')
-		len += ft_puthex_upper(va_arg(args, size_t));
+		len += ft_puthex_upper(va_arg(args, unsigned int));
 	else if (*(n + 1) == '%')
 		len += ft_putper();
 	else
@@ -43,7 +43,7 @@ int	ft_printf(const char *n, ...)
 	va_list	args;
 	int		counter;
 	int		temp;
-	
+
 	va_start(args, n);
 	counter = 0;
 	if (n == NULL)
@@ -51,7 +51,7 @@ int	ft_printf(const char *n, ...)
 	while (*n)
 	{
 		temp = 0;
-		if (*n == '%' && *(n+1) != '\0')
+		if (*n == '%' && *(n + 1) != '\0')
 			temp = ft_typeinspector(n++, args);
 		else
 			temp = write(1, n, 1);
